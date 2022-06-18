@@ -9,32 +9,49 @@ public class App {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		
+		
+		
+		//Singleton Vs Prototype
+		/*
+		 * Student student1 = context.getBean("student", Student.class);
+		 * student1.setName("James"); System.out.println("Student 1 name is " +
+		 * student1.getName());
+		 * 
+		 * Student student2 = context.getBean("student", Student.class);
+		 * System.out.println("Student 2 name is " + student2.getName());
+		 */
+		
+		
 		//For Prototype
-		PrototypeDemo obj1 = context.getBean("prototypeDemo", PrototypeDemo.class);
-		PrototypeDemo obj2 = context.getBean("prototypeDemo", PrototypeDemo.class);
-		
-		System.out.println(obj1 + "  " + obj2);
-		
-		if (obj1 == obj2) {
-
-			System.out.println("same object returned ......");
-		}else {
-			
-			System.out.println("different object returned ......");
-		}
+		/*
+		 * PrototypeDemo obj1 = context.getBean("prototypeDemo", PrototypeDemo.class);
+		 * PrototypeDemo obj2 = context.getBean("prototypeDemo", PrototypeDemo.class);
+		 * 
+		 * System.out.println(obj1 + "  " + obj2);
+		 * 
+		 * if (obj1 == obj2) {
+		 * 
+		 * System.out.println("same object returned ......"); 
+		 * }else {
+		 * 
+		 * System.out.println("different object returned ......");
+		 *  }
+		 */
 		
 		
 	   //For Singleton
-/*      SingletonDemo obj1 = context.getBean("singletonDemo", SingletonDemo.class);
-		SingletonDemo obj2 = context.getBean("singletonDemo", SingletonDemo.class);
-		
-		System.out.println(obj1 + "  " + obj2);
-		
-		if(obj1 == obj2) {
-			
-			System.out.println("same object returned ......");
-		}
-*/
+		/*
+		 * SingletonDemo obj1 = context.getBean("singletonDemo", SingletonDemo.class);
+		 * SingletonDemo obj2 = context.getBean("singletonDemo", SingletonDemo.class);
+		 * 
+		 * System.out.println(obj1 + "  " + obj2);
+		 * 
+		 * if(obj1 == obj2) {
+		 * 
+		 * System.out.println("same object returned ......"); 
+		 * }
+		 */
+
 		
 		
 	}
