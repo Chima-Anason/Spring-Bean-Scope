@@ -9,6 +9,11 @@ public class App {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		
+		//Scope bean injection problem
+		School schoolObj1 = context.getBean("school", School.class);
+		
+		System.out.println(schoolObj1.getStudent());
+		System.out.println(schoolObj1.getStudent());
 		
 		
 		//Singleton Vs Prototype
