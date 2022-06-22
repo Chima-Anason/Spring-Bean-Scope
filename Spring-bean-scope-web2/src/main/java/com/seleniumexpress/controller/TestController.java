@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.seleniumexpress.api.MyBean;
 
@@ -14,23 +15,21 @@ import com.seleniumexpress.api.MyBean;
 public class TestController {
 	
 	@Autowired
-	MyBean myBean;
+	WebApplicationContext context;
 	
 	@RequestMapping("/testing1")
 	public void test(HttpServletResponse response) throws IOException {
 		
-		response.getWriter().write("Old website name "+myBean.getWebsiteName()+"</br>");
-		myBean.setWebsiteName("Selenium Express updated");
-		response.getWriter().write("Update website name "+myBean.getWebsiteName()+"</br>");
+		
+		MyBean myBean1 = context.getBean("myBean", MyBean.class);
+		MyBean myBean2 = context.getBean("myBean", MyBean.class);
+		
+		System.out.println(myBean1 + " " + myBean2);
+		
 		
 	}
 	
 	
-	@RequestMapping("/testing2")
-	public void test1(HttpServletResponse response) throws IOException {
-		
-		response.getWriter().write("website name is "+myBean.getWebsiteName()+"</br>");
-		
-	}
+	
 
 }

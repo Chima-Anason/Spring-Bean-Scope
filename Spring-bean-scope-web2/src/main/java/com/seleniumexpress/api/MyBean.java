@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 
-@Component
-@SessionScope
-//@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Component("myBean")
+//@RequestScope
+@Scope(value = "prototype" , proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MyBean {
 	
 	private String websiteName = "Selenium express";
