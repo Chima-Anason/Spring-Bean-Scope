@@ -4,9 +4,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Component
-@RequestScope
+@SessionScope
 //@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MyBean {
 	
